@@ -1,4 +1,5 @@
-//package com.sslab.pokemon;
+
+import data.*;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;

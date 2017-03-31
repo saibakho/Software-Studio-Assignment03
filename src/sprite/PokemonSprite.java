@@ -1,4 +1,4 @@
-//package com.sslab.pokemon.sprite;
+package sprite;
 
 /**
  * Created by jerry on 2017/3/19.
@@ -34,7 +34,7 @@ public class PokemonSprite {
     public static BufferedImage getSprite(int id) {
 
         if (spriteSheet == null) {
-            spriteSheet = loadSprite("pokemonAll.png");
+            spriteSheet = loadSprite("sprite/pokemonAll.png");
         }
 
         int xGrid = id%16;

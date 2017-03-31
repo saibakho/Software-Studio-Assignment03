@@ -4,7 +4,7 @@ Software Stujardio 2017 Spring Assignment 03
 
 2. Program Structure :
 
-	The structure is based on lab03. Because I dont know how to parse the ".form" file, I set my own layouts.
+	The structure is based on lab04. Because I dont know how to parse the ".form" file, I set my own layouts.
 
 	The implementation of pokemon individual data:
 

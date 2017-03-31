@@ -1,4 +1,6 @@
-//package com.sslab.pokemon;
+
+import data.*;
+import sprite.PokemonSprite;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
@@ -8,7 +10,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-//import com.sslab.pokemon.sprite.PokemonSprite;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -50,7 +52,14 @@ public class PokeGen
 
     public PokeGen()
     {
-        pokedex = new Pokedex("pokemonData.json");
+        // UI Manager
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace(System.err);
+        }
+    //=========================================================================
+        pokedex = new Pokedex("./json/pokemonData.json");
         slotList = new ArrayList<>();
         statLabels = new ArrayList<>();
         statString = new ArrayList<>();
@@ -253,7 +262,7 @@ public class PokeGen
     private void saveToJson() throws IOException
     {
         //Create JsonWriter with fileName
-        JsonWriter writer = new JsonWriter(new FileWriter("morris_new_pokemon.json"));
+        JsonWriter writer = new JsonWriter(new FileWriter("json/morris_new_pokemon.json"));
         //create a gson object
         Gson gson = new Gson();
     //===============================================================================
@@ -269,7 +278,7 @@ public class PokeGen
     public void loadFromJson() throws IOException
     {
         //use JsonReader to read json file
-        JsonReader reader = new JsonReader(new FileReader("morris_new_pokemon.json"));
+        JsonReader reader = new JsonReader(new FileReader("json/morris_new_pokemon.json"));
         //create a gson object
         Gson gson = new Gson();
     //===============================================================================
@@ -286,13 +295,13 @@ public class PokeGen
     {
         JFrame frame = new JFrame("PokeGen");
         PokeGen init = new PokeGen();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(490, 385);
         frame.setLayout(null);
         frame.setVisible(true);
         // add components
         frame.add(init.speciesLabel);
         frame.add(init.speciesComboBox);
-        //frame.add(init.imageLabel);
         frame.add(init.nameLabel);
         frame.add(init.nickname);
         frame.add(init.typeLabel);

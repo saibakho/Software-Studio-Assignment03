@@ -1,4 +1,4 @@
-//package com.sslab.pokemon.data;
+package data;
 
 
 /**
